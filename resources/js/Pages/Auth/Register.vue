@@ -209,7 +209,7 @@
                 <p class="mt-4 text-center text-sm text-gray-400">
                     Đã có tài khoản?
                     <a
-                        href="/dang-nhap.html"
+                        href="/dang-nhap"
                         class="text-green-400 hover:underline"
                         >Đăng nhập</a
                     >
