@@ -21,6 +21,9 @@
     },
     "dependencies": {
         "@inertiajs/vue3": "^2.2.7",
+        "ogl": "^1.0.11",
+        "postprocessing": "^6.37.8",
+        "three": "^0.180.0",
         "vue": "^3.5.22"
     }
 }

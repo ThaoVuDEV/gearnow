@@ -1,7 +1,12 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
 
+
+Route::middleware(['web'])->group(function () {
+    require "auth/login.php";
+    require "auth/register.php";
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+});
