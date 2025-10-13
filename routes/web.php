@@ -8,5 +8,6 @@ use App\Http\Controllers\HomeController;
 Route::middleware(['web'])->group(function () {
     require "auth/login.php";
     require "auth/register.php";
+    require "admin.php";
     Route::get('/', [HomeController::class, 'index'])->name('home');
 });

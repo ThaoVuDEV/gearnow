@@ -11,6 +11,7 @@
 </head>
 
 <body class="font-sans antialiased">
+    @routes
     @inertia
 </body>
 
