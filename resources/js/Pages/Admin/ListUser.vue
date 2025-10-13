@@ -1,8 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { defineProps } from "vue";
-import { router } from "@inertiajs/vue3";
-import AdminLayout from "../../Layouts/AdminLayout.vue";
+import AdminLayout from "@Layouts/AdminLayout.vue";
 
 const { users } = defineProps({
     users: Array,
@@ -43,23 +42,6 @@ const closeModal = () => {
     showModal.value = false;
 };
 
-const saveUser = () => {
-    if (isEditing.value) {
-        router.put(
-            route("admin.users.update", newUser.value.id),
-            newUser.value
-        );
-    } else {
-        router.post(route("admin.users.store"), newUser.value);
-    }
-    closeModal();
-};
-
-const deleteUser = (id) => {
-    if (confirm("Cụ có chắc muốn xóa người dùng này không?")) {
-        router.delete(route("admin.users.delete", id));
-    }
-};
 </script>
 
 <template>
@@ -156,13 +138,11 @@ const deleteUser = (id) => {
 
                 <div class="mt-6 flex justify-end space-x-2">
                     <button
-                        @click="closeModal"
                         class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
                     >
                         Hủy
                     </button>
                     <button
-                        @click="saveUser"
                         class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
                     >
                         Lưu
