@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import { defineProps } from "vue";
 import { router } from "@inertiajs/vue3";
-import AdminLayout from "@/Layouts/AdminLayout.vue";
+import AdminLayout from "../../Layouts/AdminLayout.vue";
 
 const { users } = defineProps({
     users: Array,
