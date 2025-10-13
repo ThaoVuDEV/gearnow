@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { defineProps } from "vue";
-import AdminLayout from "@Layouts/AdminLayout.vue";
+import AdminLayout from "../../Layouts/AdminLayout.vue";
 
 const { users } = defineProps({
     users: Array,
