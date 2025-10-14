@@ -101,195 +101,195 @@ const flashSaleProducts = ref([
     },
 ]);
 
-// const productCategories = [
-//     {
-//         name: "Laptop",
-//         image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=150&h=150&fit=crop",
-//     },
-//     {
-//         name: "PC Gaming",
-//         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_rUxCf7zEX6Z0K7-pRwrxs5zH2D0b7DpCYw&s",
-//     },
-//     {
-//         name: "Màn hình",
-//         image: "https://minhancomputercdn.com/media/product/11418_huntkey_rrb2713e_a_9.jpg",
-//     },
-//     {
-//         name: "Bàn phím",
-//         image: "https://laptop88.vn/media/news/2806_cau-tao-ban-phim-co.jpg",
-//     },
-//     {
-//         name: "Chuột",
-//         image: "https://cdn.tgdd.vn/Products/Images/86/310086/chuot-gaming-zadez-g156m-2-750x500.jpg",
-//     },
-//     {
-//         name: "Tai nghe",
-//         image: "https://cdn.ankhang.vn/media/product/23540_tai_nghe_choi_game_razer_barracuda_rz04_03790100_r3m1_4.jpg",
-//     },
-//     {
-//         name: "Ghế Gaming",
-//         image: "https://noithatthienhoaloi.com/wp-content/uploads/2021/04/ghegame48.jpg",
-//     },
-//     {
-//         name: "Linh kiện",
-//         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrXL1jRNV3Qw1_eCwhSKEm4ogZIMr54PrD2g&s",
-//     },
-//     {
-//         name: "Phụ kiện",
-//         image: "https://maytinhdalat.vn/Images/Product/maytinhdalat_gaming-gear-3.jpg",
-//     },
-//     {
-//         name: "Showroom",
-//         image: "https://file.hstatic.net/200000722513/article/image1-66_07c186dd0a2e4d77928371a609b431d5.jpg",
-//     },
-// ];
+const productCategories = [
+    {
+        name: "Laptop",
+        image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=150&h=150&fit=crop",
+    },
+    {
+        name: "PC Gaming",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_rUxCf7zEX6Z0K7-pRwrxs5zH2D0b7DpCYw&s",
+    },
+    {
+        name: "Màn hình",
+        image: "https://minhancomputercdn.com/media/product/11418_huntkey_rrb2713e_a_9.jpg",
+    },
+    {
+        name: "Bàn phím",
+        image: "https://laptop88.vn/media/news/2806_cau-tao-ban-phim-co.jpg",
+    },
+    {
+        name: "Chuột",
+        image: "https://cdn.tgdd.vn/Products/Images/86/310086/chuot-gaming-zadez-g156m-2-750x500.jpg",
+    },
+    {
+        name: "Tai nghe",
+        image: "https://cdn.ankhang.vn/media/product/23540_tai_nghe_choi_game_razer_barracuda_rz04_03790100_r3m1_4.jpg",
+    },
+    {
+        name: "Ghế Gaming",
+        image: "https://noithatthienhoaloi.com/wp-content/uploads/2021/04/ghegame48.jpg",
+    },
+    {
+        name: "Linh kiện",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrXL1jRNV3Qw1_eCwhSKEm4ogZIMr54PrD2g&s",
+    },
+    {
+        name: "Phụ kiện",
+        image: "https://maytinhdalat.vn/Images/Product/maytinhdalat_gaming-gear-3.jpg",
+    },
+    {
+        name: "Showroom",
+        image: "https://file.hstatic.net/200000722513/article/image1-66_07c186dd0a2e4d77928371a609b431d5.jpg",
+    },
+];
 
-// const brands = ref([
-//     "asus",
-//     "msi",
-//     "gigabyte",
-//     "logitech",
-//     "razer",
-//     "acer",
-//     "lenovo",
-//     "corsair",
-//     "nzxt",
-//     "lianli",
-//     "coolermaster",
-//     "phanteks",
-// ]);
+const brands = ref([
+    "asus",
+    "msi",
+    "gigabyte",
+    "logitech",
+    "razer",
+    "acer",
+    "lenovo",
+    "corsair",
+    "nzxt",
+    "lianli",
+    "coolermaster",
+    "phanteks",
+]);
 
-// const laptopProducts = ref([
-//     {
-//         id: 7,
-//         name: "Laptop ASUS ROG Strix Scar 17",
-//         image: "https://nguyencongpc.vn/media/product/18557-asus-rog-strix-scar-17-g733qs-hg021t-4.jpg",
-//         price: "68.990.000đ",
-//     },
-//     {
-//         id: 8,
-//         name: "Laptop Acer Predator Helios 300",
-//         image: "https://laptopbaoloc.vn/wp-content/uploads/2022/05/Acer-Predator-Helios-300-PH315-54-758S.jpg",
-//         price: "45.490.000đ",
-//     },
-//     {
-//         id: 9,
-//         name: "Laptop MSI GE76 Raider",
-//         image: "https://mac24h.vn/images/detailed/94/gaming-msi-raider-ge76-mac24h-1.webp",
-//         price: "55.990.000đ",
-//     },
-//     {
-//         id: 10,
-//         name: "Laptop Lenovo Legion 7",
-//         image: "https://laptopaz.vn/media/lib/3000_9935_lenovo_legion_7_16achg6_3.jpg",
-//         price: "51.990.000đ",
-//     },
-//     {
-//         id: 11,
-//         name: "Laptop Dell Alienware M15 R7",
-//         image: "https://laptopaz.vn/media/lib/2538_61xja1VPlXL._AC_SL1500_.jpg",
-//         price: "53.490.000đ",
-//     },
-// ]);
+const laptopProducts = ref([
+    {
+        id: 7,
+        name: "Laptop ASUS ROG Strix Scar 17",
+        image: "https://nguyencongpc.vn/media/product/18557-asus-rog-strix-scar-17-g733qs-hg021t-4.jpg",
+        price: "68.990.000đ",
+    },
+    {
+        id: 8,
+        name: "Laptop Acer Predator Helios 300",
+        image: "https://laptopbaoloc.vn/wp-content/uploads/2022/05/Acer-Predator-Helios-300-PH315-54-758S.jpg",
+        price: "45.490.000đ",
+    },
+    {
+        id: 9,
+        name: "Laptop MSI GE76 Raider",
+        image: "https://mac24h.vn/images/detailed/94/gaming-msi-raider-ge76-mac24h-1.webp",
+        price: "55.990.000đ",
+    },
+    {
+        id: 10,
+        name: "Laptop Lenovo Legion 7",
+        image: "https://laptopaz.vn/media/lib/3000_9935_lenovo_legion_7_16achg6_3.jpg",
+        price: "51.990.000đ",
+    },
+    {
+        id: 11,
+        name: "Laptop Dell Alienware M15 R7",
+        image: "https://laptopaz.vn/media/lib/2538_61xja1VPlXL._AC_SL1500_.jpg",
+        price: "53.490.000đ",
+    },
+]);
 
-// const caseProducts = ref([
-//     {
-//         id: 15,
-//         name: "Case Corsair 4000D Airflow",
-//         image: "https://hoanglongcomputer.vn/media/product/2207-z4650307287768_2a72b5e23d7af1ef3a212fba35cd823b.jpg",
-//         price: "2.590.000đ",
-//     },
-//     {
-//         id: 16,
-//         name: "Case Lian Li O11 Dynamic EVO",
-//         image: "https://gosuzone.com/wp-content/uploads/2024/02/Vo-Case-Lian-Li-O11-Dynamic-EVO-RGB-Mid-TowerMau-DenKhong-Kem-Quat-Gosuzone_0001_Layer-5.jpg",
-//         price: "4.290.000đ",
-//     },
-//     {
-//         id: 17,
-//         name: "Case Cooler Master MasterBox TD500 Mesh",
-//         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNsGFUaQQal84lWR2vdtmEkX3L8LikNEkaOQ&s",
-//         price: "2.490.000đ",
-//     },
-//     {
-//         id: 18,
-//         name: "Case Phanteks Eclipse G360A",
-//         image: "https://files.pccasegear.com/UserFiles/PH-EC360ATG-DBK02-phanteks-eclipse-g360a-airflow-d-rgb-tempered-glass-black-ftr1.jpg",
-//         price: "2.190.000đ",
-//     },
-//     {
-//         id: 19,
-//         name: "Case HYTE Y60",
-//         image: "https://product.hstatic.net/1000288298/product/dsc06859_bc58bfd1dc91483baf145efdc0551fca_master.jpg",
-//         price: "5.490.000đ",
-//     },
-// ]);
+const caseProducts = ref([
+    {
+        id: 15,
+        name: "Case Corsair 4000D Airflow",
+        image: "https://hoanglongcomputer.vn/media/product/2207-z4650307287768_2a72b5e23d7af1ef3a212fba35cd823b.jpg",
+        price: "2.590.000đ",
+    },
+    {
+        id: 16,
+        name: "Case Lian Li O11 Dynamic EVO",
+        image: "https://gosuzone.com/wp-content/uploads/2024/02/Vo-Case-Lian-Li-O11-Dynamic-EVO-RGB-Mid-TowerMau-DenKhong-Kem-Quat-Gosuzone_0001_Layer-5.jpg",
+        price: "4.290.000đ",
+    },
+    {
+        id: 17,
+        name: "Case Cooler Master MasterBox TD500 Mesh",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNsGFUaQQal84lWR2vdtmEkX3L8LikNEkaOQ&s",
+        price: "2.490.000đ",
+    },
+    {
+        id: 18,
+        name: "Case Phanteks Eclipse G360A",
+        image: "https://files.pccasegear.com/UserFiles/PH-EC360ATG-DBK02-phanteks-eclipse-g360a-airflow-d-rgb-tempered-glass-black-ftr1.jpg",
+        price: "2.190.000đ",
+    },
+    {
+        id: 19,
+        name: "Case HYTE Y60",
+        image: "https://product.hstatic.net/1000288298/product/dsc06859_bc58bfd1dc91483baf145efdc0551fca_master.jpg",
+        price: "5.490.000đ",
+    },
+]);
 
-// const mouseProducts = ref([
-//     {
-//         id: 20,
-//         name: "Chuột Razer Viper V2 Pro",
-//         image: "https://nguyencongpc.vn/media/lib/24-09-2022/chutrazerviperv2protrng5.jpeg",
-//         price: "3.890.000đ",
-//     },
-//     {
-//         id: 21,
-//         name: "Chuột Endgame Gear XM2we",
-//         image: "https://photo2.tinhte.vn/data/attachment-files/2023/06/6449694_DSC_0419.jpg",
-//         price: "2.490.000đ",
-//     },
-//     {
-//         id: 22,
-//         name: "Chuột Pulsar X2V2 Wireless",
-//         image: "https://www.phongcachxanh.vn/cdn/shop/articles/Pulsar_X2V2_Wireless_Mouse_Size2_Blac_Gallery-009_copy_67dbae95-ff82-4f07-91ab-444faeb80030.jpg?v=1741535698&width=2048",
-//         price: "2.690.000đ",
-//     },
-//     {
-//         id: 23,
-//         name: "Chuột Lamzu Atlantis Mini Pro",
-//         image: "https://www.phongcachxanh.vn/cdn/shop/files/chu-t-khong-day-sieu-nh-lamzu-atlantis-og-v2-pro-h-tr-4khz-40441559154933.jpg?v=1712914353&width=800",
-//         price: "2.590.000đ",
-//     },
-//     {
-//         id: 24,
-//         name: "Chuột Glorious Model O 2 Wireless",
-//         image: "https://owlgaming.vn/wp-content/uploads/2023/08/chuot-khong-day-glorious-model-o-2-matte-black.jpg",
-//         price: "2.790.000đ",
-//     },
-// ]);
+const mouseProducts = ref([
+    {
+        id: 20,
+        name: "Chuột Razer Viper V2 Pro",
+        image: "https://nguyencongpc.vn/media/lib/24-09-2022/chutrazerviperv2protrng5.jpeg",
+        price: "3.890.000đ",
+    },
+    {
+        id: 21,
+        name: "Chuột Endgame Gear XM2we",
+        image: "https://photo2.tinhte.vn/data/attachment-files/2023/06/6449694_DSC_0419.jpg",
+        price: "2.490.000đ",
+    },
+    {
+        id: 22,
+        name: "Chuột Pulsar X2V2 Wireless",
+        image: "https://www.phongcachxanh.vn/cdn/shop/articles/Pulsar_X2V2_Wireless_Mouse_Size2_Blac_Gallery-009_copy_67dbae95-ff82-4f07-91ab-444faeb80030.jpg?v=1741535698&width=2048",
+        price: "2.690.000đ",
+    },
+    {
+        id: 23,
+        name: "Chuột Lamzu Atlantis Mini Pro",
+        image: "https://www.phongcachxanh.vn/cdn/shop/files/chu-t-khong-day-sieu-nh-lamzu-atlantis-og-v2-pro-h-tr-4khz-40441559154933.jpg?v=1712914353&width=800",
+        price: "2.590.000đ",
+    },
+    {
+        id: 24,
+        name: "Chuột Glorious Model O 2 Wireless",
+        image: "https://owlgaming.vn/wp-content/uploads/2023/08/chuot-khong-day-glorious-model-o-2-matte-black.jpg",
+        price: "2.790.000đ",
+    },
+]);
 
-// const newArrivals = ref([
-//     {
-//         id: 25,
-//         name: "NVIDIA RTX 4080 Super",
-//         image: "https://khoavang.vn/resources/cache/800xx1/A-Khoi-Hinh-anh/NewFolder/GeekPro-2024/9836-gigabyte-geforce-rtx-4080-super-windforce-16g-vl0iywtt-1714809279.webp",
-//         price: "30.990.000đ",
-//     },
-//     {
-//         id: 26,
-//         name: "AMD Ryzen 9 7950X3D",
-//         image: "https://laptopbaoloc.vn/wp-content/uploads/2023/03/AMD-Ryzen-9-7950X3D-%E2%80%93-CPU-gaming-co-hieu-nang-cao-nhat.jpg",
-//         price: "18.990.000đ",
-//     },
-//     {
-//         id: 27,
-//         name: "Màn hình Samsung Odyssey OLED G9",
-//         image: "https://anphat.com.vn/media/product/45852_m__n_h__nh_samsung_odyssey_oled_g9_g95sc_ls49cg954sexxv__6_.jpg",
-//         price: "49.990.000đ",
-//     },
-//     {
-//         id: 28,
-//         name: "Bàn phím Keychron Q1 HE",
-//         image: "https://cdn-media.sforum.vn/storage/app/media/nhatquang519/danh-gia-keychron-q1-he/danh-gia-keychron-q1-he-1.jpg",
-//         price: "5.290.000đ",
-//     },
-//     {
-//         id: 29,
-//         name: "Tai nghe Audeze Maxwell",
-//         image: "https://3kshop.vn/wp-content/uploads/2022/12/3kshop-audeze-maxwell-3-1.png",
-//         price: "8.990.000đ",
-//     },
-// ]);
+const newArrivals = ref([
+    {
+        id: 25,
+        name: "NVIDIA RTX 4080 Super",
+        image: "https://khoavang.vn/resources/cache/800xx1/A-Khoi-Hinh-anh/NewFolder/GeekPro-2024/9836-gigabyte-geforce-rtx-4080-super-windforce-16g-vl0iywtt-1714809279.webp",
+        price: "30.990.000đ",
+    },
+    {
+        id: 26,
+        name: "AMD Ryzen 9 7950X3D",
+        image: "https://laptopbaoloc.vn/wp-content/uploads/2023/03/AMD-Ryzen-9-7950X3D-%E2%80%93-CPU-gaming-co-hieu-nang-cao-nhat.jpg",
+        price: "18.990.000đ",
+    },
+    {
+        id: 27,
+        name: "Màn hình Samsung Odyssey OLED G9",
+        image: "https://anphat.com.vn/media/product/45852_m__n_h__nh_samsung_odyssey_oled_g9_g95sc_ls49cg954sexxv__6_.jpg",
+        price: "49.990.000đ",
+    },
+    {
+        id: 28,
+        name: "Bàn phím Keychron Q1 HE",
+        image: "https://cdn-media.sforum.vn/storage/app/media/nhatquang519/danh-gia-keychron-q1-he/danh-gia-keychron-q1-he-1.jpg",
+        price: "5.290.000đ",
+    },
+    {
+        id: 29,
+        name: "Tai nghe Audeze Maxwell",
+        image: "https://3kshop.vn/wp-content/uploads/2022/12/3kshop-audeze-maxwell-3-1.png",
+        price: "8.990.000đ",
+    },
+]);
 
 const testimonials = ref([
     {
@@ -315,24 +315,24 @@ const testimonials = ref([
     },
 ]);
 
-// const addToCart = (product: { name: string }) => {
-//     alert(`Đã thêm sản phẩm "${product.name}" vào giỏ hàng!`);
-// };
+const addToCart = (product: { name: string }) => {
+    alert(`Đã thêm sản phẩm "${product.name}" vào giỏ hàng!`);
+};
 
-// const currentSlide = ref(0);
-// let slideInterval: ReturnType<typeof setInterval> | null = null;
-// const nextSlide = () => {
-//     if (!slides.value || slides.value.length === 0) return;
-//     currentSlide.value = (currentSlide.value + 1) % slides.value.length;
-// };
-// const startSlideShow = () => {
-//     if (slideInterval) clearInterval(slideInterval);
-//     slideInterval = setInterval(nextSlide, 5000);
-// };
-// const stopSlideShow = () => {
-//     if (slideInterval) clearInterval(slideInterval);
-//     slideInterval = null;
-// };
+const currentSlide = ref(0);
+let slideInterval: ReturnType<typeof setInterval> | null = null;
+const nextSlide = () => {
+    if (!slides.value || slides.value.length === 0) return;
+    currentSlide.value = (currentSlide.value + 1) % slides.value.length;
+};
+const startSlideShow = () => {
+    if (slideInterval) clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, 5000);
+};
+const stopSlideShow = () => {
+    if (slideInterval) clearInterval(slideInterval);
+    slideInterval = null;
+};
 
 const countdown = ref({ hours: "00", minutes: "00", seconds: "00" });
 let countdownInterval: ReturnType<typeof setInterval> | null = null;
@@ -368,31 +368,31 @@ const setupCountdown = () => {
     countdownInterval = setInterval(updateTimer, 1000);
 };
 
-// const vScrollFadeIn: Directive<HTMLElement> = {
-//     mounted: (el) => {
-//         el.classList.add("before-fade-in");
-//         const observer = new IntersectionObserver(
-//             (entries) => {
-//                 if (entries[0].isIntersecting) {
-//                     el.classList.add("fade-in");
-//                     observer.unobserve(el);
-//                 }
-//             },
-//             { threshold: 0.1 }
-//         );
-//         observer.observe(el);
-//     },
-// };
+const vScrollFadeIn: Directive<HTMLElement> = {
+    mounted: (el) => {
+        el.classList.add("before-fade-in");
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting) {
+                    el.classList.add("fade-in");
+                    observer.unobserve(el);
+                }
+            },
+            { threshold: 0.1 }
+        );
+        observer.observe(el);
+    },
+};
 
-// onMounted(() => {
-//     startSlideShow();
-//     setupCountdown();
-// });
+onMounted(() => {
+    startSlideShow();
+    setupCountdown();
+});
 
-// onUnmounted(() => {
-//     stopSlideShow();
-//     if (countdownInterval) clearInterval(countdownInterval);
-// });
+onUnmounted(() => {
+    stopSlideShow();
+    if (countdownInterval) clearInterval(countdownInterval);
+});
 </script>
 
 <template>
@@ -462,7 +462,7 @@ const setupCountdown = () => {
                 </div>
             </div>
 
-            <section
+            <!-- <section
                 class="bg-white rounded-lg shadow-lg mt-8 py-4"
                 v-scroll-fade-in
             >
@@ -494,7 +494,7 @@ const setupCountdown = () => {
                         >
                     </div>
                 </div>
-                <!-- <div class="relative p-4">
+                 <div class="relative p-4">
                     <swiper
                         :modules="[Autoplay, Navigation]"
                         :slides-per-view="5"
@@ -624,8 +624,8 @@ const setupCountdown = () => {
                             ></path>
                         </svg>
                     </div>
-                </div> -->
-            </section>
+                </div> 
+            </section> -->
 
          <!--    <section class="mt-8" v-scroll-fade-in>
                 <h2 class="text-2xl font-bold mb-4">DANH MỤC SẢN PHẨM</h2>
