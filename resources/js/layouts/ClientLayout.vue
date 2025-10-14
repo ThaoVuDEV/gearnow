@@ -6,12 +6,9 @@ import ClientFooter from "@/components/client/ClientFooter.vue";
 <template>
     <div class="min-h-screen bg-gray-100 font-sans">
         <ClientNavbar />
-
-        <!-- Page Content -->
         <main>
             <slot />
         </main>
-
         <ClientFooter />
     </div>
 </template>
