@@ -108,6 +108,6 @@ const toggleCart = () => {
                 </div>
             </div>
         </div>
-        <CartFlyout v-if="isCartOpen" @close="isCartOpen = false" />
+        <!-- <CartFlyout v-if="isCartOpen" @close="isCartOpen = false" /> -->
     </header>
 </template>
