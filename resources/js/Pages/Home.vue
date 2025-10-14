@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, Directive } from "vue";
 import ClientLayout from "../Layouts/ClientLayout.vue";
+defineOptions({ layout: ClientLayout });
 
 const slides = ref([
     {
@@ -97,33 +98,6 @@ const flashSaleProducts = ref([
         newPrice: "2.290.000đ",
         sold: 22,
         total: 40,
-    },
-    {
-        id: 12,
-        name: "Chuột Gaming bán chạy nhất",
-        image: "https://images.tokopedia.net/img/cache/700/VqbcmM/2022/10/19/56333449-c63a-4443-a333-324a99065aa0.jpg",
-        oldPrice: "1.290.000đ",
-        newPrice: "990.000đ",
-        sold: 120,
-        total: 150,
-    },
-    {
-        id: 13,
-        name: "Bàn phím cơ không dây",
-        image: "https://theme.hstatic.net/200000421063/1001226155/14/ms_banner_img2.jpg?v=102",
-        oldPrice: "2.190.000đ",
-        newPrice: "1.890.000đ",
-        sold: 45,
-        total: 70,
-    },
-    {
-        id: 14,
-        name: "Case Build Sẵn Gaming",
-        image: "https://nguyencongpc.vn/media/product/25383-h5-flow-white-1.jpg",
-        oldPrice: "35.990.000đ",
-        newPrice: "32.990.000đ",
-        sold: 12,
-        total: 20,
     },
 ]);
 
@@ -317,108 +291,108 @@ const flashSaleProducts = ref([
 //     },
 // ]);
 
-// const testimonials = ref([
-//     {
-//         id: 1,
-//         name: "David Vũ",
-//         avatar: "https://scontent.fhan15-2.fna.fbcdn.net/v/t39.30808-6/240284294_3062274200705836_6388216654073287628_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHYZ4MXIxZRv5vSPRBr1Z8f4wUpQ9LkZCXjBSlD0uRkJWgyAhwyg7bm90FlVmJihqbG9u_uHLGJQmaA1Qar7di0&_nc_ohc=kGt802WigCcQ7kNvwGaHSHS&_nc_oc=AdktNI7ac9qkNpKHJd0k1BuhJm6N3FwFa1EueEKY42DOPwPeknZA2iimeEJm54QoC5c&_nc_zt=23&_nc_ht=scontent.fhan15-2.fna&_nc_gid=G2Gf6Tq5kbyhMQUHohlgDA&oh=00_AfdINNZ2LY9ba8-1xSRFI_csKd8ujbf8t-eF2LwzHVnfSw&oe=68F43E42",
-//         quote: "Sản phẩm chất lượng, giao hàng nhanh. Rất hài lòng với dịch vụ của shop!",
-//         rating: 4,
-//     },
-//     {
-//         id: 2,
-//         name: "Lion Đinh",
-//         avatar: "https://scontent.fhan15-2.fna.fbcdn.net/v/t39.30808-6/540915114_1491923498921439_1010816237757330361_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGYSH3d2gBW2dTnaNI5Vp1WDGKmO9L6-4YMYqY70vr7hkN3c5U7y6TQiqevR0QsvvASlCqOsOGAWlCz-PqIHUjM&_nc_ohc=j2zVqkwi7RoQ7kNvwGjFPyC&_nc_oc=AdkspPzI69Exq4XLlnMUBBk4Gsp0myszKglRgVQQkhSGtN8YYWNqOVi6it3FkxZgHrI&_nc_zt=23&_nc_ht=scontent.fhan15-2.fna&_nc_gid=DeKcT9h6LDQMTNofdXMSig&oh=00_AffGOZbXeGypzsbn4M6oqGVR7CxPse3gzCQGrcb5fLYDtg&oe=68F43E59",
-//         quote: "Build PC ở đây cấu hình rất tối ưu, nhân viên tư vấn nhiệt tình. Sẽ ủng hộ tiếp.",
-//         rating: 5,
-//     },
-//     {
-//         id: 3,
-//         name: "Khá Bảnh",
-//         avatar: "https://cdn.tienphong.vn/images/a7a4eb175a75567c9a7ae09768d7094806fdc0c21d393d0f1ea30735a5db1cc326a6ec9e69e96946320577a3042f3b6e4489d3a5a26a37f5156d8a872c166498/kha_banh_GWGK.jpg",
-//         quote: "Giá cả cạnh tranh, nhiều chương trình khuyến mãi hấp dẫn. Highly recommend!",
-//         rating: 4,
-//     },
-// ]);
+const testimonials = ref([
+    {
+        id: 1,
+        name: "David Vũ",
+        avatar: "https://scontent.fhan15-2.fna.fbcdn.net/v/t39.30808-6/240284294_3062274200705836_6388216654073287628_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHYZ4MXIxZRv5vSPRBr1Z8f4wUpQ9LkZCXjBSlD0uRkJWgyAhwyg7bm90FlVmJihqbG9u_uHLGJQmaA1Qar7di0&_nc_ohc=kGt802WigCcQ7kNvwGaHSHS&_nc_oc=AdktNI7ac9qkNpKHJd0k1BuhJm6N3FwFa1EueEKY42DOPwPeknZA2iimeEJm54QoC5c&_nc_zt=23&_nc_ht=scontent.fhan15-2.fna&_nc_gid=G2Gf6Tq5kbyhMQUHohlgDA&oh=00_AfdINNZ2LY9ba8-1xSRFI_csKd8ujbf8t-eF2LwzHVnfSw&oe=68F43E42",
+        quote: "Sản phẩm chất lượng, giao hàng nhanh. Rất hài lòng với dịch vụ của shop!",
+        rating: 4,
+    },
+    {
+        id: 2,
+        name: "Lion Đinh",
+        avatar: "https://scontent.fhan15-2.fna.fbcdn.net/v/t39.30808-6/540915114_1491923498921439_1010816237757330361_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGYSH3d2gBW2dTnaNI5Vp1WDGKmO9L6-4YMYqY70vr7hkN3c5U7y6TQiqevR0QsvvASlCqOsOGAWlCz-PqIHUjM&_nc_ohc=j2zVqkwi7RoQ7kNvwGjFPyC&_nc_oc=AdkspPzI69Exq4XLlnMUBBk4Gsp0myszKglRgVQQkhSGtN8YYWNqOVi6it3FkxZgHrI&_nc_zt=23&_nc_ht=scontent.fhan15-2.fna&_nc_gid=DeKcT9h6LDQMTNofdXMSig&oh=00_AffGOZbXeGypzsbn4M6oqGVR7CxPse3gzCQGrcb5fLYDtg&oe=68F43E59",
+        quote: "Build PC ở đây cấu hình rất tối ưu, nhân viên tư vấn nhiệt tình. Sẽ ủng hộ tiếp.",
+        rating: 5,
+    },
+    {
+        id: 3,
+        name: "Khá Bảnh",
+        avatar: "https://cdn.tienphong.vn/images/a7a4eb175a75567c9a7ae09768d7094806fdc0c21d393d0f1ea30735a5db1cc326a6ec9e69e96946320577a3042f3b6e4489d3a5a26a37f5156d8a872c166498/kha_banh_GWGK.jpg",
+        quote: "Giá cả cạnh tranh, nhiều chương trình khuyến mãi hấp dẫn. Highly recommend!",
+        rating: 4,
+    },
+]);
 
-// const addToCart = (product: { name: string }) => {
-//     alert(`Đã thêm sản phẩm "${product.name}" vào giỏ hàng!`);
-// };
+const addToCart = (product: { name: string }) => {
+    alert(`Đã thêm sản phẩm "${product.name}" vào giỏ hàng!`);
+};
 
-// const currentSlide = ref(0);
-// let slideInterval: ReturnType<typeof setInterval> | null = null;
-// const nextSlide = () => {
-//     if (!slides.value || slides.value.length === 0) return;
-//     currentSlide.value = (currentSlide.value + 1) % slides.value.length;
-// };
-// const startSlideShow = () => {
-//     if (slideInterval) clearInterval(slideInterval);
-//     slideInterval = setInterval(nextSlide, 5000);
-// };
-// const stopSlideShow = () => {
-//     if (slideInterval) clearInterval(slideInterval);
-//     slideInterval = null;
-// };
+const currentSlide = ref(0);
+let slideInterval: ReturnType<typeof setInterval> | null = null;
+const nextSlide = () => {
+    if (!slides.value || slides.value.length === 0) return;
+    currentSlide.value = (currentSlide.value + 1) % slides.value.length;
+};
+const startSlideShow = () => {
+    if (slideInterval) clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, 5000);
+};
+const stopSlideShow = () => {
+    if (slideInterval) clearInterval(slideInterval);
+    slideInterval = null;
+};
 
-// const countdown = ref({ hours: "00", minutes: "00", seconds: "00" });
-// let countdownInterval: ReturnType<typeof setInterval> | null = null;
-// const setupCountdown = () => {
-//     const now = new Date();
-//     const endTime = new Date();
-//     endTime.setHours(22, 0, 0, 0);
-//     if (now.getTime() > endTime.getTime()) {
-//         endTime.setDate(endTime.getDate() + 1);
-//     }
-//     const updateTimer = () => {
-//         const distance = endTime.getTime() - new Date().getTime();
-//         if (distance < 0) {
-//             countdown.value = { hours: "00", minutes: "00", seconds: "00" };
-//             if (countdownInterval) clearInterval(countdownInterval);
-//             setTimeout(setupCountdown, 1000);
-//             return;
-//         }
-//         countdown.value = {
-//             hours: Math.floor(distance / (1000 * 60 * 60))
-//                 .toString()
-//                 .padStart(2, "0"),
-//             minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-//                 .toString()
-//                 .padStart(2, "0"),
-//             seconds: Math.floor((distance % (1000 * 60)) / 1000)
-//                 .toString()
-//                 .padStart(2, "0"),
-//         };
-//     };
-//     updateTimer();
-//     if (countdownInterval) clearInterval(countdownInterval);
-//     countdownInterval = setInterval(updateTimer, 1000);
-// };
+const countdown = ref({ hours: "00", minutes: "00", seconds: "00" });
+let countdownInterval: ReturnType<typeof setInterval> | null = null;
+const setupCountdown = () => {
+    const now = new Date();
+    const endTime = new Date();
+    endTime.setHours(22, 0, 0, 0);
+    if (now.getTime() > endTime.getTime()) {
+        endTime.setDate(endTime.getDate() + 1);
+    }
+    const updateTimer = () => {
+        const distance = endTime.getTime() - new Date().getTime();
+        if (distance < 0) {
+            countdown.value = { hours: "00", minutes: "00", seconds: "00" };
+            if (countdownInterval) clearInterval(countdownInterval);
+            setTimeout(setupCountdown, 1000);
+            return;
+        }
+        countdown.value = {
+            hours: Math.floor(distance / (1000 * 60 * 60))
+                .toString()
+                .padStart(2, "0"),
+            minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+                .toString()
+                .padStart(2, "0"),
+            seconds: Math.floor((distance % (1000 * 60)) / 1000)
+                .toString()
+                .padStart(2, "0"),
+        };
+    };
+    updateTimer();
+    if (countdownInterval) clearInterval(countdownInterval);
+    countdownInterval = setInterval(updateTimer, 1000);
+};
 
-// const vScrollFadeIn: Directive<HTMLElement> = {
-//     mounted: (el) => {
-//         el.classList.add("before-fade-in");
-//         const observer = new IntersectionObserver(
-//             (entries) => {
-//                 if (entries[0].isIntersecting) {
-//                     el.classList.add("fade-in");
-//                     observer.unobserve(el);
-//                 }
-//             },
-//             { threshold: 0.1 }
-//         );
-//         observer.observe(el);
-//     },
-// };
+const vScrollFadeIn: Directive<HTMLElement> = {
+    mounted: (el) => {
+        el.classList.add("before-fade-in");
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting) {
+                    el.classList.add("fade-in");
+                    observer.unobserve(el);
+                }
+            },
+            { threshold: 0.1 }
+        );
+        observer.observe(el);
+    },
+};
 
-// onMounted(() => {
-//     startSlideShow();
-//     setupCountdown();
-// });
+onMounted(() => {
+    startSlideShow();
+    setupCountdown();
+});
 
-// onUnmounted(() => {
-//     stopSlideShow();
-//     if (countdownInterval) clearInterval(countdownInterval);
-// });
+onUnmounted(() => {
+    stopSlideShow();
+    if (countdownInterval) clearInterval(countdownInterval);
+});
 </script>
 
 <template>
