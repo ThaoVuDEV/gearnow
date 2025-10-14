@@ -490,8 +490,7 @@ onUnmounted(() => {
                 </div>
             </div>
 
-            <!-- Flash Sale -->
-            <section
+            <!-- <section
                 class="bg-white rounded-lg shadow-lg mt-8 py-4"
                 v-scroll-fade-in
             >
@@ -656,7 +655,6 @@ onUnmounted(() => {
                 </div>
             </section>
 
-            <!-- Product Categories -->
             <section class="mt-8" v-scroll-fade-in>
                 <h2 class="text-2xl font-bold mb-4">DANH MỤC SẢN PHẨM</h2>
                 <div
@@ -684,7 +682,6 @@ onUnmounted(() => {
                 </div>
             </section>
 
-            <!-- New Arrivals -->
             <section
                 class="bg-white rounded-lg shadow-lg mt-8 p-4"
                 v-scroll-fade-in
@@ -734,7 +731,6 @@ onUnmounted(() => {
                 </div>
             </section>
 
-            <!-- Laptop Gaming Bán Chạy -->
             <section
                 class="bg-white rounded-lg shadow-lg mt-8 p-4"
                 v-scroll-fade-in
@@ -786,7 +782,6 @@ onUnmounted(() => {
                 </div>
             </section>
 
-            <!-- Case Bán Chạy -->
             <section
                 class="bg-white rounded-lg shadow-lg mt-8 p-4"
                 v-scroll-fade-in
@@ -836,7 +831,6 @@ onUnmounted(() => {
                 </div>
             </section>
 
-            <!-- Chuột Bán Chạy -->
             <section
                 class="bg-white rounded-lg shadow-lg mt-8 p-4"
                 v-scroll-fade-in
@@ -888,7 +882,6 @@ onUnmounted(() => {
                 </div>
             </section>
 
-            Testimonials
             <section class="mt-8" v-scroll-fade-in>
                 <h2 class="text-3xl font-bold text-center mb-8">
                     KHÁCH HÀNG NÓI GÌ VỀ CHÚNG TÔI
@@ -921,7 +914,6 @@ onUnmounted(() => {
                 </div>
             </section>
 
-            <!-- Brands -->
             <section class="mt-8" v-scroll-fade-in>
                 <h2 class="text-3xl font-bold text-center mb-8">
                     THƯƠNG HIỆU HÀNG ĐẦU
@@ -943,7 +935,7 @@ onUnmounted(() => {
                         />
                     </a>
                 </div>
-            </section>
+            </section> -->
         </main>
     </div>
 </template>
