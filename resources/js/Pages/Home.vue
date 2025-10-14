@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, Directive } from "vue";
 import ClientLayout from "../Layouts/ClientLayout.vue";
-// defineOptions({ layout: ClientLayout });
+ defineOptions({ layout: ClientLayout });
 
 const slides = ref([
     {
