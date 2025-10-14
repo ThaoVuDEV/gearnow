@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { usePage, router } from "@inertiajs/vue3";
-import CartFlyout from "./CartFlyout.vue";
 
 const open = ref(false);
-const isCartOpen = ref(false);
 const page = usePage();
 const authUser = page.props.auth;
 
@@ -12,9 +10,7 @@ const logout = () => {
     router.post("/logout");
 };
 
-const toggleCart = () => {
-    isCartOpen.value = !isCartOpen.value;
-};
+
 </script>
 
 <template>
@@ -50,7 +46,7 @@ const toggleCart = () => {
                         </svg>
                         <span class="font-semibold hidden lg:block">Tư vấn cấu hình</span>
                     </a>
-                    <button @click="toggleCart" class="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition relative">
+                    <button  class="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition relative">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
@@ -108,6 +104,5 @@ const toggleCart = () => {
                 </div>
             </div>
         </div>
-        <!-- <CartFlyout v-if="isCartOpen" @close="isCartOpen = false" /> -->
     </header>
 </template>
