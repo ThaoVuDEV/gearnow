@@ -494,7 +494,7 @@ const setupCountdown = () => {
                         >
                     </div>
                 </div>
-                <div class="relative p-4">
+                <!-- <div class="relative p-4">
                     <swiper
                         :modules="[Autoplay, Navigation]"
                         :slides-per-view="5"
@@ -624,7 +624,7 @@ const setupCountdown = () => {
                             ></path>
                         </svg>
                     </div>
-                </div>
+                </div> -->
             </section>
 
          <!--    <section class="mt-8" v-scroll-fade-in>
