@@ -28,9 +28,9 @@ const flashSaleProducts = ref([
     { id: 4, name: 'Tai nghe SteelSeries Arctis Nova Pro', image: "https://tanphat.com.vn/media/product/5244_49398_steelseries_arctis_nova_pro_wireless_61520_a5.jpg", oldPrice: "7.490.000đ", newPrice: "6.490.000đ", sold: 8, total: 20 },
     { id: 5, name: 'Card màn hình NVIDIA RTX 4070 Ti', image: "https://product.hstatic.net/1000288298/product/card-man-hinh-zotac-4070-ti-super-solid7_pcm_6_30ca8c5cab9a459ba8a16e3d325d997a_master.jpg", oldPrice: "22.990.000đ", newPrice: "20.490.000đ", sold: 5, total: 10 },
     { id: 6, name: 'Case NZXT H5 Flow RGB', image: "https://www.tncstore.vn/media/product/250-11524-vo-case-nzxt-h5-flow-rgb-all-black-cc-h52fb-r1--1-.jpg", oldPrice: "2.790.000đ", newPrice: "2.290.000đ", sold: 22, total: 40 },
-    { id: 7, name: 'Chuột Gaming bán chạy nhất', image: "https://images.tokopedia.net/img/cache/700/VqbcmM/2022/10/19/56333449-c63a-4443-a333-324a99065aa0.jpg", oldPrice: "1.290.000đ", newPrice: "990.000đ", sold: 120, total: 150 },
-    { id: 8, name: 'Bàn phím cơ không dây', image: "https://theme.hstatic.net/200000421063/1001226155/14/ms_banner_img2.jpg?v=102", oldPrice: "2.190.000đ", newPrice: "1.890.000đ", sold: 45, total: 70 },
-    { id: 9, name: 'Case Build Sẵn Gaming', image: "https://nguyencongpc.vn/media/product/25383-h5-flow-white-1.jpg", oldPrice: "35.990.000đ", newPrice: "32.990.000đ", sold: 12, total: 20 },
+    { id: 12, name: 'Chuột Gaming bán chạy nhất', image: "https://images.tokopedia.net/img/cache/700/VqbcmM/2022/10/19/56333449-c63a-4443-a333-324a99065aa0.jpg", oldPrice: "1.290.000đ", newPrice: "990.000đ", sold: 120, total: 150 },
+    { id: 13, name: 'Bàn phím cơ không dây', image: "https://theme.hstatic.net/200000421063/1001226155/14/ms_banner_img2.jpg?v=102", oldPrice: "2.190.000đ", newPrice: "1.890.000đ", sold: 45, total: 70 },
+    { id: 14, name: 'Case Build Sẵn Gaming', image: "https://nguyencongpc.vn/media/product/25383-h5-flow-white-1.jpg", oldPrice: "35.990.000đ", newPrice: "32.990.000đ", sold: 12, total: 20 },
 ]);
 
 const productCategories = [
@@ -82,7 +82,11 @@ const newArrivals = ref([
   { id: 29, name: "Tai nghe Audeze Maxwell", image: "https://3kshop.vn/wp-content/uploads/2022/12/3kshop-audeze-maxwell-3-1.png", price: "8.990.000đ" },
 ]);
 
-
+const testimonials = ref([
+  { id: 1, name: "David Vũ", avatar: "https://scontent.fhan15-2.fna.fbcdn.net/v/t39.30808-6/240284294_3062274200705836_6388216654073287628_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHYZ4MXIxZRv5vSPRBr1Z8f4wUpQ9LkZCXjBSlD0uRkJWgyAhwyg7bm90FlVmJihqbG9u_uHLGJQmaA1Qar7di0&_nc_ohc=kGt802WigCcQ7kNvwGaHSHS&_nc_oc=AdktNI7ac9qkNpKHJd0k1BuhJm6N3FwFa1EueEKY42DOPwPeknZA2iimeEJm54QoC5c&_nc_zt=23&_nc_ht=scontent.fhan15-2.fna&_nc_gid=G2Gf6Tq5kbyhMQUHohlgDA&oh=00_AfdINNZ2LY9ba8-1xSRFI_csKd8ujbf8t-eF2LwzHVnfSw&oe=68F43E42", quote: "Sản phẩm chất lượng, giao hàng nhanh. Rất hài lòng với dịch vụ của shop!" ,rating: 4},
+  { id: 2, name: "Lion Đinh", avatar: "https://scontent.fhan15-2.fna.fbcdn.net/v/t39.30808-6/540915114_1491923498921439_1010816237757330361_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGYSH3d2gBW2dTnaNI5Vp1WDGKmO9L6-4YMYqY70vr7hkN3c5U7y6TQiqevR0QsvvASlCqOsOGAWlCz-PqIHUjM&_nc_ohc=j2zVqkwi7RoQ7kNvwGjFPyC&_nc_oc=AdkspPzI69Exq4XLlnMUBBk4Gsp0myszKglRgVQQkhSGtN8YYWNqOVi6it3FkxZgHrI&_nc_zt=23&_nc_ht=scontent.fhan15-2.fna&_nc_gid=DeKcT9h6LDQMTNofdXMSig&oh=00_AffGOZbXeGypzsbn4M6oqGVR7CxPse3gzCQGrcb5fLYDtg&oe=68F43E59", quote: "Build PC ở đây cấu hình rất tối ưu, nhân viên tư vấn nhiệt tình. Sẽ ủng hộ tiếp.", rating: 5 },
+  { id: 3, name: "Khá Bảnh", avatar: "https://cdn.tienphong.vn/images/a7a4eb175a75567c9a7ae09768d7094806fdc0c21d393d0f1ea30735a5db1cc326a6ec9e69e96946320577a3042f3b6e4489d3a5a26a37f5156d8a872c166498/kha_banh_GWGK.jpg", quote: "Giá cả cạnh tranh, nhiều chương trình khuyến mãi hấp dẫn. Highly recommend!" ,rating: 4},
+]);
 
 const addToCart = (product: { name: string }) => {
     alert(`Đã thêm sản phẩm "${product.name}" vào giỏ hàng!`);
@@ -317,6 +321,21 @@ onUnmounted(() => {
                         <a href="#" class="block overflow-hidden rounded-md"><img :src="product.image" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300 bg-gray-200" /></a>
                         <a href="#"><h3 class="mt-3 font-semibold text-gray-800 h-12 truncate group-hover:text-blue-600">{{ product.name }}</h3></a>
                         <div class="mt-2"><span class="text-red-600 font-bold text-lg">{{ product.price }}</span></div>
+                    </div>
+                </div>
+            </section>
+
+            Testimonials
+            <section class="mt-8" v-scroll-fade-in>
+                <h2 class="text-3xl font-bold text-center mb-8">KHÁCH HÀNG NÓI GÌ VỀ CHÚNG TÔI</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div v-for="testimonial in testimonials" :key="testimonial.id" class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center">
+                        <img :src="testimonial.avatar" class="w-24 h-24 rounded-full mb-4 border-4 border-blue-300" />
+                        <p class="text-gray-600 italic mb-4">"{{ testimonial.quote }}"</p>
+                        <h4 class="font-semibold text-lg">{{ testimonial.name }}</h4>
+                        <div v-if="testimonial.rating" class="flex text-yellow-400 mt-2">
+                            <span v-for="n in testimonial.rating" :key="n">⭐</span>
+                        </div>
                     </div>
                 </div>
             </section>
