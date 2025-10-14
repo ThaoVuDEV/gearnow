@@ -44,62 +44,62 @@ import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const flashSaleProducts = ref([
-    {
-        id: 1,
-        name: 'Màn hình LG UltraGear 27"',
-        image: "https://product.hstatic.net/200000722513/product/large01_c6adf3377eb1458d9b04ad0655dd24ec.jpg",
-        oldPrice: "8.990.000đ",
-        newPrice: "6.990.000đ",
-        sold: 35,
-        total: 50,
-    },
-    {
-        id: 2,
-        name: "Bàn phím cơ Razer BlackWidow V4",
-        image: "https://bizweb.dktcdn.net/thumb/1024x1024/100/329/122/products/ban-phim-co-razer-blackwidow-v4-pro-rgb-1.jpg?v=1723032011420",
-        oldPrice: "4.590.000đ",
-        newPrice: "3.790.000đ",
-        sold: 15,
-        total: 40,
-    },
-    {
-        id: 3,
-        name: "Chuột Logitech G Pro X Superlight",
-        image: "https://tanphat.com.vn/media/product/4106_46859_logitech_g_pro_x_superlight_wireless_pink_h2.jpg",
-        oldPrice: "3.390.000đ",
-        newPrice: "2.890.000đ",
-        sold: 68,
-        total: 100,
-    },
-    {
-        id: 4,
-        name: "Tai nghe SteelSeries Arctis Nova Pro",
-        image: "https://tanphat.com.vn/media/product/5244_49398_steelseries_arctis_nova_pro_wireless_61520_a5.jpg",
-        oldPrice: "7.490.000đ",
-        newPrice: "6.490.000đ",
-        sold: 8,
-        total: 20,
-    },
-    {
-        id: 5,
-        name: "Card màn hình NVIDIA RTX 4070 Ti",
-        image: "https://product.hstatic.net/1000288298/product/card-man-hinh-zotac-4070-ti-super-solid7_pcm_6_30ca8c5cab9a459ba8a16e3d325d997a_master.jpg",
-        oldPrice: "22.990.000đ",
-        newPrice: "20.490.000đ",
-        sold: 5,
-        total: 10,
-    },
-    {
-        id: 6,
-        name: "Case NZXT H5 Flow RGB",
-        image: "https://www.tncstore.vn/media/product/250-11524-vo-case-nzxt-h5-flow-rgb-all-black-cc-h52fb-r1--1-.jpg",
-        oldPrice: "2.790.000đ",
-        newPrice: "2.290.000đ",
-        sold: 22,
-        total: 40,
-    },
-]);
+// const flashSaleProducts = ref([
+//     {
+//         id: 1,
+//         name: 'Màn hình LG UltraGear 27"',
+//         image: "https://product.hstatic.net/200000722513/product/large01_c6adf3377eb1458d9b04ad0655dd24ec.jpg",
+//         oldPrice: "8.990.000đ",
+//         newPrice: "6.990.000đ",
+//         sold: 35,
+//         total: 50,
+//     },
+//     {
+//         id: 2,
+//         name: "Bàn phím cơ Razer BlackWidow V4",
+//         image: "https://bizweb.dktcdn.net/thumb/1024x1024/100/329/122/products/ban-phim-co-razer-blackwidow-v4-pro-rgb-1.jpg?v=1723032011420",
+//         oldPrice: "4.590.000đ",
+//         newPrice: "3.790.000đ",
+//         sold: 15,
+//         total: 40,
+//     },
+//     {
+//         id: 3,
+//         name: "Chuột Logitech G Pro X Superlight",
+//         image: "https://tanphat.com.vn/media/product/4106_46859_logitech_g_pro_x_superlight_wireless_pink_h2.jpg",
+//         oldPrice: "3.390.000đ",
+//         newPrice: "2.890.000đ",
+//         sold: 68,
+//         total: 100,
+//     },
+//     {
+//         id: 4,
+//         name: "Tai nghe SteelSeries Arctis Nova Pro",
+//         image: "https://tanphat.com.vn/media/product/5244_49398_steelseries_arctis_nova_pro_wireless_61520_a5.jpg",
+//         oldPrice: "7.490.000đ",
+//         newPrice: "6.490.000đ",
+//         sold: 8,
+//         total: 20,
+//     },
+//     {
+//         id: 5,
+//         name: "Card màn hình NVIDIA RTX 4070 Ti",
+//         image: "https://product.hstatic.net/1000288298/product/card-man-hinh-zotac-4070-ti-super-solid7_pcm_6_30ca8c5cab9a459ba8a16e3d325d997a_master.jpg",
+//         oldPrice: "22.990.000đ",
+//         newPrice: "20.490.000đ",
+//         sold: 5,
+//         total: 10,
+//     },
+//     {
+//         id: 6,
+//         name: "Case NZXT H5 Flow RGB",
+//         image: "https://www.tncstore.vn/media/product/250-11524-vo-case-nzxt-h5-flow-rgb-all-black-cc-h52fb-r1--1-.jpg",
+//         oldPrice: "2.790.000đ",
+//         newPrice: "2.290.000đ",
+//         sold: 22,
+//         total: 40,
+//     },
+// ]);
 
 const productCategories = [
     {
