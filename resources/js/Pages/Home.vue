@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, Directive } from "vue";
 import ClientLayout from "../Layouts/ClientLayout.vue";
-import { defineComponent } from "vue";
-export default defineComponent({
-    layout: ClientLayout,
-});
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const slides = ref([
     {
@@ -42,10 +42,7 @@ const smallBanners = ref([
     },
 ]);
 
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { Autoplay, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
+
 
 const flashSaleProducts = ref([
     {
@@ -397,7 +394,13 @@ onUnmounted(() => {
     if (countdownInterval) clearInterval(countdownInterval);
 });
 </script>
+<script lang="ts">
+import ClientLayout from "../Layouts/ClientLayout.vue";
 
+export default {
+  layout: ClientLayout,
+};
+</script>
 <template>
     <div class="bg-gray-100 font-sans">
         <main class="max-w-screen-xl mx-auto px-4 mt-4 overflow-hidden">
@@ -497,7 +500,7 @@ onUnmounted(() => {
                         >
                     </div>
                 </div>
-                <div class="relative p-4">
+                 <div class="relative p-4">
                     <swiper
                         :modules="[Autoplay, Navigation]"
                         :slides-per-view="5"
@@ -627,7 +630,7 @@ onUnmounted(() => {
                             ></path>
                         </svg>
                     </div>
-                </div>
+                </div> 
             </section>
 
             <section class="mt-8" v-scroll-fade-in>
