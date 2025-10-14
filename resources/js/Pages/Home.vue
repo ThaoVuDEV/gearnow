@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, Directive } from "vue";
 import ClientLayout from "../Layouts/ClientLayout.vue";
- defineOptions({ layout: ClientLayout });
+import { defineComponent } from "vue";
+export default defineComponent({
+    layout: ClientLayout,
+});
 
 const slides = ref([
     {
@@ -494,7 +497,7 @@ onUnmounted(() => {
                         >
                     </div>
                 </div>
-                 <div class="relative p-4">
+                <div class="relative p-4">
                     <swiper
                         :modules="[Autoplay, Navigation]"
                         :slides-per-view="5"
@@ -624,7 +627,7 @@ onUnmounted(() => {
                             ></path>
                         </svg>
                     </div>
-                </div> 
+                </div>
             </section>
 
             <section class="mt-8" v-scroll-fade-in>
