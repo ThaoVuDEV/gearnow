@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { usePage, router } from "@inertiajs/vue3";
+import CartFlyout from "./CartFlyout.vue";
 
 const open = ref(false);
 const isCartOpen = ref(false);
@@ -107,5 +108,6 @@ const toggleCart = () => {
                 </div>
             </div>
         </div>
+        <CartFlyout v-if="isCartOpen" @close="isCartOpen = false" />
     </header>
 </template>

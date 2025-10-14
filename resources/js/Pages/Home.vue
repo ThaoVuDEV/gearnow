@@ -16,6 +16,11 @@ const smallBanners = ref([
     { image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNQSWIqyvd8Ux2pPo8oMD8OUOL3zMxHFyIDQ&s", alt: "Ưu Đãi Thanh Toán" },
 ]);
 
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+
 const flashSaleProducts = ref([
     { id: 1, name: 'Màn hình LG UltraGear 27"', image: "https://product.hstatic.net/200000722513/product/large01_c6adf3377eb1458d9b04ad0655dd24ec.jpg", oldPrice: "8.990.000đ", newPrice: "6.990.000đ", sold: 35, total: 50 },
     { id: 2, name: 'Bàn phím cơ Razer BlackWidow V4', image: "https://bizweb.dktcdn.net/thumb/1024x1024/100/329/122/products/ban-phim-co-razer-blackwidow-v4-pro-rgb-1.jpg?v=1723032011420", oldPrice: "4.590.000đ", newPrice: "3.790.000đ", sold: 15, total: 40 },
@@ -23,6 +28,9 @@ const flashSaleProducts = ref([
     { id: 4, name: 'Tai nghe SteelSeries Arctis Nova Pro', image: "https://tanphat.com.vn/media/product/5244_49398_steelseries_arctis_nova_pro_wireless_61520_a5.jpg", oldPrice: "7.490.000đ", newPrice: "6.490.000đ", sold: 8, total: 20 },
     { id: 5, name: 'Card màn hình NVIDIA RTX 4070 Ti', image: "https://product.hstatic.net/1000288298/product/card-man-hinh-zotac-4070-ti-super-solid7_pcm_6_30ca8c5cab9a459ba8a16e3d325d997a_master.jpg", oldPrice: "22.990.000đ", newPrice: "20.490.000đ", sold: 5, total: 10 },
     { id: 6, name: 'Case NZXT H5 Flow RGB', image: "https://www.tncstore.vn/media/product/250-11524-vo-case-nzxt-h5-flow-rgb-all-black-cc-h52fb-r1--1-.jpg", oldPrice: "2.790.000đ", newPrice: "2.290.000đ", sold: 22, total: 40 },
+    { id: 7, name: 'Chuột Gaming bán chạy nhất', image: "https://images.tokopedia.net/img/cache/700/VqbcmM/2022/10/19/56333449-c63a-4443-a333-324a99065aa0.jpg", oldPrice: "1.290.000đ", newPrice: "990.000đ", sold: 120, total: 150 },
+    { id: 8, name: 'Bàn phím cơ không dây', image: "https://theme.hstatic.net/200000421063/1001226155/14/ms_banner_img2.jpg?v=102", oldPrice: "2.190.000đ", newPrice: "1.890.000đ", sold: 45, total: 70 },
+    { id: 9, name: 'Case Build Sẵn Gaming', image: "https://nguyencongpc.vn/media/product/25383-h5-flow-white-1.jpg", oldPrice: "35.990.000đ", newPrice: "32.990.000đ", sold: 12, total: 20 },
 ]);
 
 const productCategories = [
@@ -39,7 +47,7 @@ const productCategories = [
 ];
 
 const brands = ref([
-    "asus", "msi", "gigabyte", "logitech", "razer", "acer", "lenovo", "corsair"
+    "asus", "msi", "gigabyte", "logitech", "razer", "acer", "lenovo", "corsair", "nzxt", "lianli", "coolermaster", "phanteks"
 ]);
 
 const laptopProducts = ref([
@@ -49,6 +57,32 @@ const laptopProducts = ref([
     { id: 10, name: "Laptop Lenovo Legion 7", image: "https://laptopaz.vn/media/lib/3000_9935_lenovo_legion_7_16achg6_3.jpg", price: "51.990.000đ" },
     { id: 11, name: "Laptop Dell Alienware M15 R7", image: "https://laptopaz.vn/media/lib/2538_61xja1VPlXL._AC_SL1500_.jpg", price: "53.490.000đ" },
 ]);
+
+const caseProducts = ref([
+    { id: 15, name: "Case Corsair 4000D Airflow", image: "https://hoanglongcomputer.vn/media/product/2207-z4650307287768_2a72b5e23d7af1ef3a212fba35cd823b.jpg", price: "2.590.000đ" },
+    { id: 16, name: "Case Lian Li O11 Dynamic EVO", image: "https://gosuzone.com/wp-content/uploads/2024/02/Vo-Case-Lian-Li-O11-Dynamic-EVO-RGB-Mid-TowerMau-DenKhong-Kem-Quat-Gosuzone_0001_Layer-5.jpg", price: "4.290.000đ" },
+    { id: 17, name: "Case Cooler Master MasterBox TD500 Mesh", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNsGFUaQQal84lWR2vdtmEkX3L8LikNEkaOQ&s", price: "2.490.000đ" },
+    { id: 18, name: "Case Phanteks Eclipse G360A", image: "https://files.pccasegear.com/UserFiles/PH-EC360ATG-DBK02-phanteks-eclipse-g360a-airflow-d-rgb-tempered-glass-black-ftr1.jpg", price: "2.190.000đ" },
+    { id: 19, name: "Case HYTE Y60", image: "https://product.hstatic.net/1000288298/product/dsc06859_bc58bfd1dc91483baf145efdc0551fca_master.jpg", price: "5.490.000đ" },
+]);
+
+const mouseProducts = ref([
+    { id: 20, name: "Chuột Razer Viper V2 Pro", image: "https://nguyencongpc.vn/media/lib/24-09-2022/chutrazerviperv2protrng5.jpeg", price: "3.890.000đ" },
+    { id: 21, name: "Chuột Endgame Gear XM2we", image: "https://photo2.tinhte.vn/data/attachment-files/2023/06/6449694_DSC_0419.jpg", price: "2.490.000đ" },
+    { id: 22, name: "Chuột Pulsar X2V2 Wireless", image: "https://www.phongcachxanh.vn/cdn/shop/articles/Pulsar_X2V2_Wireless_Mouse_Size2_Blac_Gallery-009_copy_67dbae95-ff82-4f07-91ab-444faeb80030.jpg?v=1741535698&width=2048", price: "2.690.000đ" },
+    { id: 23, name: "Chuột Lamzu Atlantis Mini Pro", image: "https://www.phongcachxanh.vn/cdn/shop/files/chu-t-khong-day-sieu-nh-lamzu-atlantis-og-v2-pro-h-tr-4khz-40441559154933.jpg?v=1712914353&width=800", price: "2.590.000đ" },
+    { id: 24, name: "Chuột Glorious Model O 2 Wireless", image: "https://owlgaming.vn/wp-content/uploads/2023/08/chuot-khong-day-glorious-model-o-2-matte-black.jpg", price: "2.790.000đ" },
+]);
+
+const newArrivals = ref([
+  { id: 25, name: "NVIDIA RTX 4080 Super", image: "https://khoavang.vn/resources/cache/800xx1/A-Khoi-Hinh-anh/NewFolder/GeekPro-2024/9836-gigabyte-geforce-rtx-4080-super-windforce-16g-vl0iywtt-1714809279.webp", price: "30.990.000đ" },
+  { id: 26, name: "AMD Ryzen 9 7950X3D", image: "https://laptopbaoloc.vn/wp-content/uploads/2023/03/AMD-Ryzen-9-7950X3D-%E2%80%93-CPU-gaming-co-hieu-nang-cao-nhat.jpg", price: "18.990.000đ" },
+  { id: 27, name: "Màn hình Samsung Odyssey OLED G9", image: "https://anphat.com.vn/media/product/45852_m__n_h__nh_samsung_odyssey_oled_g9_g95sc_ls49cg954sexxv__6_.jpg", price: "49.990.000đ" },
+  { id: 28, name: "Bàn phím Keychron Q1 HE", image: "https://cdn-media.sforum.vn/storage/app/media/nhatquang519/danh-gia-keychron-q1-he/danh-gia-keychron-q1-he-1.jpg", price: "5.290.000đ" },
+  { id: 29, name: "Tai nghe Audeze Maxwell", image: "https://3kshop.vn/wp-content/uploads/2022/12/3kshop-audeze-maxwell-3-1.png", price: "8.990.000đ" },
+]);
+
+
 
 const addToCart = (product: { name: string }) => {
     alert(`Đã thêm sản phẩm "${product.name}" vào giỏ hàng!`);
@@ -86,18 +120,6 @@ const setupCountdown = () => {
     updateTimer();
     if (countdownInterval) clearInterval(countdownInterval);
     countdownInterval = setInterval(updateTimer, 1000);
-};
-
-const flashSaleContainer = ref<HTMLElement | null>(null);
-const scrollFlashSale = (direction: number) => {
-    const container = flashSaleContainer.value;
-    if (container) {
-        const firstItem = container.querySelector("div");
-        if (firstItem) {
-            const scrollAmount = (firstItem.clientWidth + 16) * 3;
-            container.scrollBy({ left: scrollAmount * direction, behavior: "smooth" });
-        }
-    }
 };
 
 const vScrollFadeIn: Directive<HTMLElement> = {
@@ -170,32 +192,47 @@ onUnmounted(() => {
                     </div>
                 </div>
                 <div class="relative p-4">
-                    <div ref="flashSaleContainer" class="flex space-x-4 overflow-x-auto pb-4 hide-scrollbar">
-                        <div v-for="product in flashSaleProducts" :key="product.id" class="group relative flex-shrink-0 w-52 bg-white rounded-lg border border-gray-200 text-sm transform transition-transform hover:-translate-y-2 duration-300">
-                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center z-10">
-                                <button @click="addToCart(product)" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-transform hover:scale-105">Thêm vào giỏ</button>
-                            </div>
-                            <div class="relative">
-                                <a href="#" class="block"><img :src="product.image" class="w-full h-44 object-cover rounded-t-lg bg-gray-200" /></a>
-                                <div class="absolute top-0 left-0 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-tl-lg rounded-br-lg">GIẢM SỐC</div>
-                            </div>
-                            <div class="p-3">
-                                <a href="#"><h3 class="font-semibold text-gray-800 h-10 truncate">{{ product.name }}</h3></a>
-                                <div class="mt-2"><span class="text-red-600 font-bold text-lg">{{ product.newPrice }}</span></div>
-                                <div><span class="text-gray-400 line-through text-xs">{{ product.oldPrice }}</span></div>
-                                <div class="mt-2 h-6">
-                                    <div class="w-full bg-red-100 rounded-full h-5 relative overflow-hidden">
-                                        <div class="bg-red-500 h-5 rounded-full" :style="{ width: `${(product.sold / product.total) * 100}%` }"></div>
-                                        <div class="absolute inset-0 flex items-center justify-center">
-                                            <span class="text-white text-[10px] font-bold">🔥 Đã bán {{ product.sold }}</span>
+                    <swiper
+                        :modules="[Autoplay, Navigation]"
+                        :slides-per-view="5"
+                        :space-between="16"
+                        :loop="true"
+                        :autoplay="{ delay: 3000, disableOnInteraction: false }"
+                        :navigation="{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }"
+                        :breakpoints="{
+                            320: { slidesPerView: 1 },
+                            640: { slidesPerView: 3 },
+                            1024: { slidesPerView: 5 }
+                        }"
+                        class="pb-4"
+                    >
+                        <swiper-slide v-for="product in flashSaleProducts" :key="product.id">
+                            <div class="group relative flex-shrink-0 w-full bg-white rounded-lg border border-gray-200 text-sm transform transition-transform hover:-translate-y-2 duration-300 h-full">
+                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center z-10">
+                                    <button @click="addToCart(product)" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-transform hover:scale-105">Thêm vào giỏ</button>
+                                </div>
+                                <div class="relative">
+                                    <a href="#" class="block"><img :src="product.image" class="w-full h-44 object-cover rounded-t-lg bg-gray-200" /></a>
+                                    <div class="absolute top-0 left-0 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-tl-lg rounded-br-lg">GIẢM SỐC</div>
+                                </div>
+                                <div class="p-3 flex flex-col">
+                                    <a href="#"><h3 class="font-semibold text-gray-800 h-10 truncate">{{ product.name }}</h3></a>
+                                    <div class="mt-2"><span class="text-red-600 font-bold text-lg">{{ product.newPrice }}</span></div>
+                                    <div><span class="text-gray-400 line-through text-xs">{{ product.oldPrice }}</span></div>
+                                    <div class="mt-auto pt-2 h-6">
+                                        <div class="w-full bg-red-100 rounded-full h-5 relative overflow-hidden">
+                                            <div class="bg-red-500 h-5 rounded-full" :style="{ width: `${(product.sold / product.total) * 100}%` }"></div>
+                                            <div class="absolute inset-0 flex items-center justify-center">
+                                                <span class="text-white text-[10px] font-bold">🔥 Đã bán {{ product.sold }}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <button @click="scrollFlashSale(-1)" class="absolute top-1/2 -translate-y-1/2 left-0 bg-white/80 p-2 rounded-full shadow-md hover:bg-white transition opacity-0 hover:opacity-100 z-20"><svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>
-                    <button @click="scrollFlashSale(1)" class="absolute top-1/2 -translate-y-1/2 right-0 bg-white/80 p-2 rounded-full shadow-md hover:bg-white transition opacity-0 hover:opacity-100 z-20"><svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>
+                        </swiper-slide>
+                    </swiper>
+                    <div class="swiper-button-prev absolute top-1/2 -translate-y-1/2 left-0 bg-white/80 p-2 rounded-full shadow-md hover:bg-white transition z-20 cursor-pointer"><svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></div>
+                    <div class="swiper-button-next absolute top-1/2 -translate-y-1/2 right-0 bg-white/80 p-2 rounded-full shadow-md hover:bg-white transition z-20 cursor-pointer"><svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></div>
                 </div>
             </section>
 
@@ -212,14 +249,68 @@ onUnmounted(() => {
                 </div>
             </section>
 
+            <!-- New Arrivals -->
+            <section class="bg-white rounded-lg shadow-lg mt-8 p-4" v-scroll-fade-in>
+                <div class="bestselling-header">
+                    <h2 class="text-2xl font-bold text-white">SẢN PHẨM MỚI</h2>
+                    <a href="#" class="text-white font-semibold hover:underline">Xem tất cả >></a>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-4">
+                    <div v-for="product in newArrivals" :key="product.id" class="group relative rounded-lg border-2 border-gray-200 p-3 transition-all duration-300 hover:shadow-xl hover:border-blue-500">
+                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center z-10">
+                            <button @click="addToCart(product)" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-transform hover:scale-105">Thêm vào giỏ</button>
+                        </div>
+                        <a href="#" class="block overflow-hidden rounded-md"><img :src="product.image" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300 bg-gray-200" /></a>
+                        <a href="#"><h3 class="mt-3 font-semibold text-gray-800 h-12 truncate group-hover:text-blue-600">{{ product.name }}</h3></a>
+                        <div class="mt-2"><span class="text-red-600 font-bold text-lg">{{ product.price }}</span></div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Laptop Gaming Bán Chạy -->
             <section class="bg-white rounded-lg shadow-lg mt-8 p-4" v-scroll-fade-in>
-                <div class="flex items-center justify-between mb-4">
-                    <h2 class="text-2xl font-bold">LAPTOP GAMING BÁN CHẠY</h2>
-                    <a href="#" class="text-blue-600 font-semibold hover:underline">Xem tất cả >></a>
+                <div class="bestselling-header">
+                    <h2 class="text-2xl font-bold text-white">LAPTOP GAMING BÁN CHẠY</h2>
+                    <a href="#" class="text-white font-semibold hover:underline">Xem tất cả >></a>
                 </div>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                    <div v-for="product in laptopProducts" :key="product.id" class="group relative rounded-lg border border-gray-200 p-3 transition-shadow hover:shadow-xl">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-4">
+                    <div v-for="product in laptopProducts" :key="product.id" class="group relative rounded-lg border-2 border-gray-200 p-3 transition-all duration-300 hover:shadow-xl hover:border-blue-500">
+                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center z-10">
+                            <button @click="addToCart(product)" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-transform hover:scale-105">Thêm vào giỏ</button>
+                        </div>
+                        <a href="#" class="block overflow-hidden rounded-md"><img :src="product.image" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300 bg-gray-200" /></a>
+                        <a href="#"><h3 class="mt-3 font-semibold text-gray-800 h-12 truncate group-hover:text-blue-600">{{ product.name }}</h3></a>
+                        <div class="mt-2"><span class="text-red-600 font-bold text-lg">{{ product.price }}</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Case Bán Chạy -->
+            <section class="bg-white rounded-lg shadow-lg mt-8 p-4" v-scroll-fade-in>
+                <div class="bestselling-header">
+                    <h2 class="text-2xl font-bold text-white">CASE BÁN CHẠY</h2>
+                    <a href="#" class="text-white font-semibold hover:underline">Xem tất cả >></a>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-4">
+                    <div v-for="product in caseProducts" :key="product.id" class="group relative rounded-lg border-2 border-gray-200 p-3 transition-all duration-300 hover:shadow-xl hover:border-blue-500">
+                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center z-10">
+                            <button @click="addToCart(product)" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-transform hover:scale-105">Thêm vào giỏ</button>
+                        </div>
+                        <a href="#" class="block overflow-hidden rounded-md"><img :src="product.image" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300 bg-gray-200" /></a>
+                        <a href="#"><h3 class="mt-3 font-semibold text-gray-800 h-12 truncate group-hover:text-blue-600">{{ product.name }}</h3></a>
+                        <div class="mt-2"><span class="text-red-600 font-bold text-lg">{{ product.price }}</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chuột Bán Chạy -->
+            <section class="bg-white rounded-lg shadow-lg mt-8 p-4" v-scroll-fade-in>
+                <div class="bestselling-header">
+                    <h2 class="text-2xl font-bold text-white">CHUỘT BÁN CHẠY</h2>
+                    <a href="#" class="text-white font-semibold hover:underline">Xem tất cả >></a>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-4">
+                    <div v-for="product in mouseProducts" :key="product.id" class="group relative rounded-lg border-2 border-gray-200 p-3 transition-all duration-300 hover:shadow-xl hover:border-blue-500">
                          <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center z-10">
                             <button @click="addToCart(product)" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-transform hover:scale-105">Thêm vào giỏ</button>
                         </div>
@@ -232,13 +323,14 @@ onUnmounted(() => {
 
             <!-- Brands -->
             <section class="mt-8" v-scroll-fade-in>
-                <h2 class="text-2xl font-bold mb-4">THƯƠNG HIỆU HÀNG ĐẦU</h2>
-                <div class="grid grid-cols-4 lg:grid-cols-8 gap-4 bg-white p-4 rounded-lg shadow-lg">
-                    <a v-for="brand in brands" :key="brand" href="#" class="flex justify-center items-center p-2 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                        <img :src="`https://logo.clearbit.com/${brand}.com`" class="h-10 object-contain" :alt="`${brand} Logo`" onerror="this.onerror=null;this.src=`https://via.placeholder.com/150x50.png?text=${brand}`" />
+                <h2 class="text-3xl font-bold text-center mb-8">THƯƠNG HIỆU HÀNG ĐẦU</h2>
+                <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-4 bg-white p-6 rounded-lg shadow-lg">
+                    <a v-for="brand in brands" :key="brand" href="#" class="flex justify-center items-center p-4 bg-gray-100 rounded-lg transition-transform transform hover:scale-110 hover:shadow-xl">
+                        <img :src="`https://logo.clearbit.com/${brand}.com`" class="h-10 object-contain" :alt="`${brand} Logo`" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x50.png?text='+brand.toUpperCase()" />
                     </a>
                 </div>
             </section>
+
         </main>
     </div>
 </template>
@@ -261,5 +353,16 @@ onUnmounted(() => {
 .fade-in {
     opacity: 1;
     transform: translateY(0);
+}
+
+.bestselling-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-bottom: 1rem; */
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    background: linear-gradient(to right, #4f46e5, #818cf8);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 </style>

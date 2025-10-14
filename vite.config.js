@@ -3,6 +3,7 @@ import laravel from "laravel-vite-plugin";
 import vue from "@vitejs/plugin-vue";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
+
 export default defineConfig({
     plugins: [
         laravel({
@@ -12,12 +13,25 @@ export default defineConfig({
         vue(),
         tailwindcss(),
     ],
+
     resolve: {
         alias: {
             "@": path.resolve(__dirname, "resources/js"),
             "ziggy-js": "/vendor/tightenco/ziggy",
         },
     },
+
+    build: {
+        sourcemap: false, 
+        minify: false, 
+        chunkSizeWarningLimit: 1600, // 💡 tránh cảnh báo chunk quá lớn
+        rollupOptions: {
+            output: {
+                manualChunks: undefined, // 💡 gộp file tránh tách nhiều chunk nhỏ
+            },
+        },
+    },
+
     server: {
         host: "0.0.0.0",
         port: 5173,
