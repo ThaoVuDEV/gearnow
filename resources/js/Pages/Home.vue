@@ -315,24 +315,24 @@ const testimonials = ref([
     },
 ]);
 
-const addToCart = (product: { name: string }) => {
-    alert(`Đã thêm sản phẩm "${product.name}" vào giỏ hàng!`);
-};
+// const addToCart = (product: { name: string }) => {
+//     alert(`Đã thêm sản phẩm "${product.name}" vào giỏ hàng!`);
+// };
 
-const currentSlide = ref(0);
-let slideInterval: ReturnType<typeof setInterval> | null = null;
-const nextSlide = () => {
-    if (!slides.value || slides.value.length === 0) return;
-    currentSlide.value = (currentSlide.value + 1) % slides.value.length;
-};
-const startSlideShow = () => {
-    if (slideInterval) clearInterval(slideInterval);
-    slideInterval = setInterval(nextSlide, 5000);
-};
-const stopSlideShow = () => {
-    if (slideInterval) clearInterval(slideInterval);
-    slideInterval = null;
-};
+// const currentSlide = ref(0);
+// let slideInterval: ReturnType<typeof setInterval> | null = null;
+// const nextSlide = () => {
+//     if (!slides.value || slides.value.length === 0) return;
+//     currentSlide.value = (currentSlide.value + 1) % slides.value.length;
+// };
+// const startSlideShow = () => {
+//     if (slideInterval) clearInterval(slideInterval);
+//     slideInterval = setInterval(nextSlide, 5000);
+// };
+// const stopSlideShow = () => {
+//     if (slideInterval) clearInterval(slideInterval);
+//     slideInterval = null;
+// };
 
 const countdown = ref({ hours: "00", minutes: "00", seconds: "00" });
 let countdownInterval: ReturnType<typeof setInterval> | null = null;
@@ -368,31 +368,31 @@ const setupCountdown = () => {
     countdownInterval = setInterval(updateTimer, 1000);
 };
 
-const vScrollFadeIn: Directive<HTMLElement> = {
-    mounted: (el) => {
-        el.classList.add("before-fade-in");
-        const observer = new IntersectionObserver(
-            (entries) => {
-                if (entries[0].isIntersecting) {
-                    el.classList.add("fade-in");
-                    observer.unobserve(el);
-                }
-            },
-            { threshold: 0.1 }
-        );
-        observer.observe(el);
-    },
-};
+// const vScrollFadeIn: Directive<HTMLElement> = {
+//     mounted: (el) => {
+//         el.classList.add("before-fade-in");
+//         const observer = new IntersectionObserver(
+//             (entries) => {
+//                 if (entries[0].isIntersecting) {
+//                     el.classList.add("fade-in");
+//                     observer.unobserve(el);
+//                 }
+//             },
+//             { threshold: 0.1 }
+//         );
+//         observer.observe(el);
+//     },
+// };
 
-onMounted(() => {
-    startSlideShow();
-    setupCountdown();
-});
+// onMounted(() => {
+//     startSlideShow();
+//     setupCountdown();
+// });
 
-onUnmounted(() => {
-    stopSlideShow();
-    if (countdownInterval) clearInterval(countdownInterval);
-});
+// onUnmounted(() => {
+//     stopSlideShow();
+//     if (countdownInterval) clearInterval(countdownInterval);
+// });
 </script>
 
 <template>
