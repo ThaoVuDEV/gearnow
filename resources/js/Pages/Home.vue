@@ -393,13 +393,7 @@ onUnmounted(() => {
     if (countdownInterval) clearInterval(countdownInterval);
 });
 </script>
-<script lang="ts">
-import ClientLayout from "../Layouts/ClientLayout.vue";
 
-export default {
-  layout: ClientLayout,
-};
-</script>
 <template>
     <div class="bg-gray-100 font-sans">
         <main class="max-w-screen-xl mx-auto px-4 mt-4 overflow-hidden">
