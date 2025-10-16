@@ -13,12 +13,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-        User::updateOrCreate(
-            ['email' => 'thaovu.dev17@gmail.com'], // điều kiện tìm
-            [
-                'role' => 'admin',
-            ]
-        );
+        User::create([
+            'name' => 'Admin',             // Thêm dòng này
+            'email' => 'thaovu.dev17@gmail.com',
+            'role' => 'admin',
+            'password' => bcrypt('123456'), // Nếu cần mật khẩu
+        ]);
     }
 }
