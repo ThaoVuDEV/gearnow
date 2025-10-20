@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ClientNavbar from "@/components/client/ClientNavbar.vue";
-import ClientFooter from "@/components/client/ClientFooter.vue";
+import ClientNavbar from "../components/client/ClientNavbar.vue";
+import ClientFooter from "../components/client/ClientFooter.vue";
 </script>
 
 <template>

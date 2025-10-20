@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-
+import ClientLayout from "../Layouts/ClientLayout.vue";
 const slides = ref([
     {
         image: "https://minhancomputer.com/media/news/1506_dan-pc-gaming.jpg",
@@ -40,8 +40,6 @@ const smallBanners = ref([
         alt: "Ưu Đãi Thanh Toán",
     },
 ]);
-
-
 
 const flashSaleProducts = ref([
     {
@@ -395,11 +393,9 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <div class="bg-gray-100 font-sans">
-        <main class="max-w-screen-xl mx-auto px-4 mt-4 overflow-hidden">
-            <!-- Hero Slideshow & Banners -->
+    <ClientLayout>
+        <div class="max-w-screen-xl mx-auto px-4 mt-4 overflow-hidden">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-4" v-scroll-fade-in>
-                <!-- Main Slideshow -->
                 <div
                     class="lg:col-span-2 relative w-full h-64 md:h-96 overflow-hidden rounded-lg shadow-lg"
                     @mouseenter="stopSlideShow"
@@ -444,7 +440,6 @@ onUnmounted(() => {
                     </div>
                 </div>
 
-                <!-- Small Banners -->
                 <div class="grid grid-cols-2 gap-4">
                     <a
                         v-for="banner in smallBanners"
@@ -493,13 +488,16 @@ onUnmounted(() => {
                         >
                     </div>
                 </div>
-                 <div class="relative p-4">
+                <div class="relative p-4">
                     <swiper
                         :modules="[Autoplay, Navigation]"
                         :slides-per-view="5"
                         :space-between="16"
                         :loop="true"
-                        :autoplay="{ delay: 3000, disableOnInteraction: false }"
+                        :autoplay="{
+                            delay: 3000,
+                            disableOnInteraction: false,
+                        }"
                         :navigation="{
                             nextEl: '.swiper-button-next',
                             prevEl: '.swiper-button-prev',
@@ -623,7 +621,7 @@ onUnmounted(() => {
                             ></path>
                         </svg>
                     </div>
-                </div> 
+                </div>
             </section>
 
             <section class="mt-8" v-scroll-fade-in>
@@ -907,8 +905,8 @@ onUnmounted(() => {
                     </a>
                 </div>
             </section>
-        </main>
-    </div>
+        </div>
+    </ClientLayout>
 </template>
 
 <style>
