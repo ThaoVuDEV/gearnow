@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { usePage, router } from "@inertiajs/vue3";
+import { route } from 'ziggy-js'
 
 const open = ref(false);
 const page = usePage();
-const authUser = page.props.auth;
+const authUser = page.props.authUser;
 
 const logout = () => {
     router.post("/logout");
@@ -135,8 +136,29 @@ const logout = () => {
                                         {{ authUser.name }}
                                     </p>
                                 </div>
-
+                               
                                 <ul v-if="authUser" class="mt-2 text-gray-700">
+                                   <li v-if="authUser.role === 'admin'">
+                                        <a
+                                            :href="route('dashboard')"
+                                            class="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition-colors"
+                                        >
+                                            <svg
+                                                class="w-5 h-5"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                                                />
+                                            </svg>
+                                            <span>Trang Quản Trị Viên</span>
+                                        </a>
+                                    </li>
                                     <li>
                                         <a
                                             href="#"
@@ -214,13 +236,13 @@ const logout = () => {
                                     class="flex flex-col space-y-2 mt-4"
                                 >
                                     <a
-                                        href="/login"
+                                        href="/dang-nhap"
                                         class="w-full px-4 py-2 text-center bg-blue-600 text-white rounded hover:bg-blue-700 transition"
                                     >
                                         Đăng nhập
                                     </a>
                                     <a
-                                        href="/register"
+                                        href="/dang-ky"
                                         class="w-full px-4 py-2 text-center border border-blue-600 text-blue-600 rounded hover:bg-blue-50 transition"
                                     >
                                         Đăng ký
