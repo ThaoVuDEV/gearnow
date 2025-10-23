@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: [self-hosted, deloy]
+    runs-on: [self-hosted, gearnow]
 
     steps:
       - name: Checkout source
