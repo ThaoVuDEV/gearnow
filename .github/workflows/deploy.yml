@@ -9,54 +9,12 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Checkout source
-        uses: actions/checkout@v4
-
       - name: Install PHP deps
         run: |
-          composer install --no-interaction --prefer-dist --no-dev --optimize-autoloader
+          cd /var/www/gearnow
+          git pull origin main
+          npm run build
 
-      - name: Build frontend (nếu có Vite)
-        run: |
-          if [ -f package.json ]; then
-            npm ci
-            npm run build
-          fi
+      
 
-      - name: Prepare release & publish
-        run: |
-          set -e
-          APP_ROOT="/var/www/gearnow"
-          RELEASES="$APP_ROOT/releases"
-          SHARED="$APP_ROOT/shared"
-          CURRENT="$APP_ROOT/current"
-          TS="$(date +%Y%m%d%H%M%S)"
-          NEWREL="$RELEASES/$TS"
-
-          mkdir -p "$RELEASES" "$SHARED/storage"
-
-          rsync -a --delete --exclude=".git" --exclude="node_modules" --exclude=".github" ./ "$NEWREL/"
-
-          if [ -d "dist" ]; then
-            rsync -a dist/ "$NEWREL/public/"
-          fi
-
-          ln -snf "$SHARED/.env" "$NEWREL/.env"
-          rm -rf "$NEWREL/storage"
-          ln -snf "$SHARED/storage" "$NEWREL/storage"
-
-          cd "$NEWREL"
-          php artisan key:generate --force || true
-          php artisan migrate --force
-          php artisan config:cache && php artisan route:cache && php artisan view:cache
-          php artisan storage:link || true
-
-          ln -snf "$NEWREL" "$CURRENT"
-
-          if command -v systemctl >/dev/null 2>&1; then
-            sudo systemctl reload php8.4-fpm || true
-            sudo systemctl reload nginx || true
-          else
-            sudo /usr/sbin/service php8.4-fpm reload || true
-            sudo /usr/sbin/service nginx reload || true
-          fi
+      
