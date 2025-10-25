@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, Directive } from "vue";
+import { Link } from "@inertiajs/vue3";
+import { route } from "ziggy-js";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
@@ -513,25 +515,12 @@ onUnmounted(() => {
                             v-for="product in flashSaleProducts"
                             :key="product.id"
                         >
-                            <div
-                                class="group relative flex-shrink-0 w-full bg-white rounded-lg border border-gray-200 text-sm transform transition-transform hover:-translate-y-2 duration-300 h-full"
-                            >
-                                <div
-                                    class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center z-10"
-                                >
-                                    <button
-                                        @click="addToCart(product)"
-                                        class="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-transform hover:scale-105"
-                                    >
-                                        Thêm vào giỏ
-                                    </button>
-                                </div>
+                            <Link :href="route('product.show', { product: product.slug })" class="group relative flex-shrink-0 w-full bg-white rounded-lg border border-gray-200 text-sm transform transition-transform hover:-translate-y-2 duration-300 h-full">
                                 <div class="relative">
-                                    <a href="#" class="block"
-                                        ><img
-                                            :src="product.image"
-                                            class="w-full h-44 object-cover rounded-t-lg bg-gray-200"
-                                    /></a>
+                                    <img
+                                        :src="product.image"
+                                        class="w-full h-44 object-cover rounded-t-lg bg-gray-200"
+                                    />
                                     <div
                                         class="absolute top-0 left-0 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-tl-lg rounded-br-lg"
                                     >
@@ -539,13 +528,11 @@ onUnmounted(() => {
                                     </div>
                                 </div>
                                 <div class="p-3 flex flex-col">
-                                    <a href="#"
-                                        ><h3
-                                            class="font-semibold text-gray-800 h-10 truncate"
-                                        >
-                                            {{ product.name }}
-                                        </h3></a
+                                    <h3
+                                        class="font-semibold text-gray-800 h-10 truncate"
                                     >
+                                        {{ product.name }}
+                                    </h3>
                                     <div class="mt-2">
                                         <span
                                             class="text-red-600 font-bold text-lg"
@@ -565,11 +552,7 @@ onUnmounted(() => {
                                             <div
                                                 class="bg-red-500 h-5 rounded-full"
                                                 :style="{
-                                                    width: `${
-                                                        (product.sold /
-                                                            product.total) *
-                                                        100
-                                                    }%`,
+                                                    width: `${(product.sold / product.total) * 100}%`,
                                                 }"
                                             ></div>
                                             <div
@@ -584,7 +567,7 @@ onUnmounted(() => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
                         </swiper-slide>
                     </swiper>
                     <div
@@ -664,39 +647,22 @@ onUnmounted(() => {
                 <div
                     class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-4"
                 >
-                    <div
-                        v-for="product in newArrivals"
-                        :key="product.id"
-                        class="group relative rounded-lg border-2 border-gray-200 p-3 transition-all duration-300 hover:shadow-xl hover:border-blue-500"
-                    >
-                        <div
-                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center z-10"
+                    <Link v-for="product in newArrivals" :key="product.id" :href="route('product.show', { product: product.slug })" class="group relative rounded-lg border-2 border-gray-200 p-3 transition-all duration-300 hover:shadow-xl hover:border-blue-500">
+                        <img
+                            :src="product.image"
+                            class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300 bg-gray-200"
+                        />
+                        <h3
+                            class="mt-3 font-semibold text-gray-800 h-12 truncate group-hover:text-blue-600"
                         >
-                            <button
-                                @click="addToCart(product)"
-                                class="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-transform hover:scale-105"
-                            >
-                                Thêm vào giỏ
-                            </button>
-                        </div>
-                        <a href="#" class="block overflow-hidden rounded-md"
-                            ><img
-                                :src="product.image"
-                                class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300 bg-gray-200"
-                        /></a>
-                        <a href="#"
-                            ><h3
-                                class="mt-3 font-semibold text-gray-800 h-12 truncate group-hover:text-blue-600"
-                            >
-                                {{ product.name }}
-                            </h3></a
-                        >
+                            {{ product.name }}
+                        </h3>
                         <div class="mt-2">
                             <span class="text-red-600 font-bold text-lg">{{
                                 product.price
                             }}</span>
                         </div>
-                    </div>
+                    </Link>
                 </div>
             </section>
 

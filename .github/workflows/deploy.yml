@@ -2,61 +2,30 @@ name: Deploy to VPS (self-hosted)
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: self-hosted
-
     steps:
-      - name: Checkout source
-        uses: actions/checkout@v4
-
-      - name: Install PHP deps
-        run: |
-          composer install --no-interaction --prefer-dist --no-dev --optimize-autoloader
-
-      - name: Build frontend (nếu có Vite)
-        run: |
-          if [ -f package.json ]; then
-            npm ci
-            npm run build
-          fi
-
-      - name: Prepare release & publish
+      - name: Sync & Build
         run: |
           set -e
-          APP_ROOT="/var/www/gearnow"
-          RELEASES="$APP_ROOT/releases"
-          SHARED="$APP_ROOT/shared"
-          CURRENT="$APP_ROOT/current"
-          TS="$(date +%Y%m%d%H%M%S)"
-          NEWREL="$RELEASES/$TS"
+          cd /var/www/gearnow
 
-          mkdir -p "$RELEASES" "$SHARED/storage"
+          # nếu Git cảnh báo "unsafe repository", mở quyền an toàn:
+          git config --global --add safe.directory /var/www/gearnow
 
-          rsync -a --delete --exclude=".git" --exclude="node_modules" --exclude=".github" ./ "$NEWREL/"
+          # đồng bộ đúng y main, tránh kẹt vì local changes
+          git fetch --all
+          git reset --hard origin/main
+          git clean -fd
 
-          if [ -d "dist" ]; then
-            rsync -a dist/ "$NEWREL/public/"
-          fi
+          # (tuỳ chọn) ép Node 22 nếu Cụ cần
+          export NVM_DIR="$HOME/.nvm"; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"; nvm use 22 || true
+          echo "Node: $(node -v) | NPM: $(npm -v)"
 
-          ln -snf "$SHARED/.env" "$NEWREL/.env"
-          rm -rf "$NEWREL/storage"
-          ln -snf "$SHARED/storage" "$NEWREL/storage"
+          # nếu cần cài deps thì mở dòng sau
+          # npm ci || npm install
 
-          cd "$NEWREL"
-          php artisan key:generate --force || true
-          php artisan migrate --force
-          php artisan config:cache && php artisan route:cache && php artisan view:cache
-          php artisan storage:link || true
-
-          ln -snf "$NEWREL" "$CURRENT"
-
-          if command -v systemctl >/dev/null 2>&1; then
-            sudo systemctl reload php8.4-fpm || true
-            sudo systemctl reload nginx || true
-          else
-            sudo /usr/sbin/service php8.4-fpm reload || true
-            sudo /usr/sbin/service nginx reload || true
-          fi
+          npm run build
