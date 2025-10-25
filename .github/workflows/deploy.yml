@@ -4,6 +4,10 @@ on:
   push:
     branches: [ main ]
 
+defaults:
+  run:
+    shell: bash -l {0}  # quan trọng: nạp ~/.bashrc => có nvm
+
 jobs:
   deploy:
     runs-on: self-hosted
@@ -13,19 +17,12 @@ jobs:
           set -e
           cd /var/www/gearnow
 
-          # nếu Git cảnh báo "unsafe repository", mở quyền an toàn:
           git config --global --add safe.directory /var/www/gearnow
-
-          # đồng bộ đúng y main, tránh kẹt vì local changes
           git fetch --all
           git reset --hard origin/main
           git clean -fd
 
-          # (tuỳ chọn) ép Node 22 nếu Cụ cần
-          export NVM_DIR="$HOME/.nvm"; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"; nvm use 22 || true
-          echo "Node: $(node -v) | NPM: $(npm -v)"
-
-          # nếu cần cài deps thì mở dòng sau
-          # npm ci || npm install
+          nvm use 22 || nvm install 22     # dùng Node 22
+          echo "Node: $(node -v) | NPM: $(npm -v) | which: $(which node)"
 
           npm run build
