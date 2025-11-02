@@ -8,10 +8,10 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
-      - name: Sync & Build 
-      
+      - name: Sync & Build
         run: |
           set -e
+          git config --global --add safe.directory /var/www/gearnow
           cd /var/www/gearnow
           git fetch --all
           git reset --hard origin/main
