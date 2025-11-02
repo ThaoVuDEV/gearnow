@@ -18,6 +18,7 @@ jobs:
           script_stop: true
           script: |
             set -e
+            nvm use 22 || nvm install 22
             cd "${{ secrets.APP_DIR }}"
             git fetch --all
             git reset --hard origin/main
