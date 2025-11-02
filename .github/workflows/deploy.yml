@@ -1,4 +1,4 @@
-name: Deploy to VPS (self-hosted)
+name: Deploy
 
 on:
   push:
@@ -8,22 +8,12 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
-      - name: Sync & Build (force Node 22)
-        env:
-          NODE_DIR: /home/alex/.nvm/versions/node/v22.21.0   # đúng theo máy Cụ
+      - name: Sync & Build 
+      
         run: |
           set -e
           cd /var/www/gearnow
-
-          # Đồng bộ code về đúng origin/main (tránh kẹt do local changes)
-          git config --global --add safe.directory /var/www/gearnow
           git fetch --all
           git reset --hard origin/main
           git clean -fd
-
-          # Ép PATH dùng Node 22 của user alex
-          export PATH="$NODE_DIR/bin:$PATH"
-          echo "Node: $(node -v) | NPM: $(npm -v) | which: $(which node)"
-
-          # Cụ chỉ cần build
           npm run build
