@@ -1,4 +1,4 @@
-name: Deploy
+name: Pull & Build on Server
 
 on:
   push:
@@ -8,19 +8,18 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Sync code
-        run: |
-          set -e
-          git config --global --add safe.directory /var/www/gearnow
-          cd /var/www/gearnow
-          git fetch --all
-          git reset --hard origin/main
-          git clean -fd
-
-      - name: Install deps
-        run: |
-          npm install 
-
-      - name: Build
-        run: |
-          npm run build
+      - name: SSH and deploy
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script_stop: true
+          script: |
+            set -e
+            cd "${{ secrets.APP_DIR }}"
+            git fetch --all
+            git reset --hard origin/main
+            npm run build
+ 
